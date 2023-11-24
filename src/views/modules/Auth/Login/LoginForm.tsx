@@ -30,6 +30,7 @@ const LoginForm: React.FC = () => {
 
   useEffect(() => {
     let rememberMe: any = localStorage.getItem("remember_me");
+
     if (rememberMe) {
       rememberMe = JSON.parse(stringDecryption(rememberMe));
       form.setFieldsValue({

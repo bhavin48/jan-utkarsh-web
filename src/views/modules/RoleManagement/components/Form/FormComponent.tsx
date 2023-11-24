@@ -24,7 +24,9 @@ const FormComponent: React.FC<any> = ({
     const newPrivilegesList: any[] = privilegesList.map((item: any) => {
       let isSelected = item.selected;
       const child = item.child.map((childItem: any) => {
+       
         let childSelected = childItem.selected;
+    
         if (parentId && id == childItem.id) {
           childSelected = checked;
         }
@@ -146,7 +148,7 @@ const FormComponent: React.FC<any> = ({
                   if (action.selected) {
                     allChecked++
                   }
-                })
+                })         
                 return (
                   <Row gutter={15} key={item.id}>
                     <Card className="mt-10" style={{ width: "100%" }}>

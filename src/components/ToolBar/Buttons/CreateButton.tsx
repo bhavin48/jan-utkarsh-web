@@ -10,12 +10,13 @@ const CreateButton: React.FC<ButtonProps> = ({
   permission,
   name = "Create",
 }) => {
+
   const userDetail = useAppSelector(state => state.auth.userDetail);
 
   const permitted = permissionKey
     ? checkPrivileges(userDetail, permissionKey)
     : permission;
-
+    
   return permitted ? (
     <Button className="primaryBtn" onClick={action}>
       {name}

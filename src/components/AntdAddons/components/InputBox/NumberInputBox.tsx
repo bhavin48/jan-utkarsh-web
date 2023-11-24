@@ -13,7 +13,7 @@ const NumberInputBox: React.FC<NumberInputBoxProps> = props => {
       name={formProps.label && toLowerCaseWithUnderscore(formProps.label)}
       {...formProps}
     >
-      <InputNumber placeholder={formProps?.label} {...inputProps} />
+      <InputNumber placeholder={formProps?.label}  />
     </InputWrapper>
   );
 };

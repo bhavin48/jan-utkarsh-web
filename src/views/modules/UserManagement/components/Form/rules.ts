@@ -15,6 +15,6 @@ export const rules: any = {
     validations.min.text(minPassword),
     validations.max.text(maxPassword),
   ],
-  dateOfBirth: (field?: string) => [validations.required.text(field)],
+  dateOfBirth: (field?: string) => [validations.required.select(field)],
   gender: (field?: string) => [validations.required.select(field)],
 };

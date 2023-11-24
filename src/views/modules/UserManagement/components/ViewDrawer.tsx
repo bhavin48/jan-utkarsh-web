@@ -25,7 +25,6 @@ const ViewDrawer: React.FC<ViewDrawerProps> = ({
     close();
     form.resetFields();
   };
-
   return (
     <Drawer
       title={`View ${titleName}`}

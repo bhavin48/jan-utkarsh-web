@@ -21,7 +21,7 @@ export const statusColumn: ColDef = {
   cellRenderer: SwitchCellRenderer,
   filter: "agSetColumnFilter",
   filterParams: {
-    values: (params: any) => {
+    values: (params: any) => {  
       params.success(["Active", "Inactive"]);
     },
     buttons: ["apply", "reset"],
@@ -34,6 +34,7 @@ export const isActiveColumn: ColDef = {
   headerName: "Is Active?",
   filter: "agSetColumnFilter",
   cellRenderer: (props: any) => {
+    
     return renderNA(props.data.name);
   },
   filterParams: {

@@ -1,4 +1,4 @@
-const baseUrl = "/v1/admin/user";
+const baseUrl = "/admin/user";
 
 export const API_URL = {
   LIST: `${baseUrl}`,

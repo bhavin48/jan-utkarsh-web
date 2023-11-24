@@ -11,6 +11,8 @@ interface ConfigProps {
 
 export const onFilterChanged = (params: any) => {
 	const agGrid = params;
+	console.log("agGrid " , agGrid);
+	
 	if (agGrid && agGrid.api.getModel().getRowCount() === 0) {
 		agGrid.api.showNoRowsOverlay();
 	}

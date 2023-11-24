@@ -39,6 +39,7 @@ const userSlice = createSlice({
     },
     setGrid: (state, action: PayloadAction<any>) => {
       state.agGrid = action?.payload;
+   
     },
     setPerPage: (state, action: PayloadAction<any>) => {
       state.perPage = action?.payload;
@@ -76,6 +77,7 @@ export const setPerPageSize =
 export const setupGrid =
   (params: GridReadyEvent): AppThunk<any> =>
   async (dispatch, getState: () => RootState) => {
+
     try {
       dispatch(setGrid(params));
       const dataSource = await createDataSource(

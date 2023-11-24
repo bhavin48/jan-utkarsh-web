@@ -38,6 +38,7 @@ interface CompoundedComponent
 }
 
 const InputBox = InternalInputBox as CompoundedComponent;
+
 InputBox.Text = TextInputBox;
 InputBox.Password = PasswordInputBox;
 InputBox.Select = SelectInputBox;

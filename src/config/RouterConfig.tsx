@@ -13,6 +13,10 @@ import RoleManagement from "../views/modules/RoleManagement";
 import ResetPassword from "../views/modules/Auth/ResetPassword/ResetPassword";
 import ForgotPassword from "../views/modules/Auth/ForgotPassword/ForgotPassword";
 import Profile from "../views/modules/Profile";
+import List from "../bhavin/UserManagement/Listing/List";
+import UserManagementB from "../bhavin/UserManagement";
+import Listing from "../taluka/component/Listing/Listing";
+import TalukasManagement from "../taluka/component";
 
 export default function Router() {
   return useRoutes(RouterConfig);
@@ -58,6 +62,14 @@ export const RouterConfig = [
       {
         path: "/roles/:action?/:id?",
         element: <ModuleWrap module={RoleManagement} />,
+      },
+      {
+        path: "/ethnicities/:action?/:id?",
+        element: <ModuleWrap module={UserManagementB} />,
+      },
+      {
+         path : "/talukas/:action?/:id?",
+         element : <ModuleWrap module={TalukasManagement} />
       },
     ],
   },

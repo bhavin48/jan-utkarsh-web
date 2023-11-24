@@ -16,10 +16,10 @@ const AgGridWrapper: React.FC<AgGridWrapperProps> = ({
   onGridReadyWithDispatch,
   ...rest
 }) => {
+   
   const gridType =
     type === "serverSide" ? Config.grid.server : Config.grid.local;
   const dispatch = useAppDispatch();
-
   return (
     <div className="ag-theme-alpine ag-grid-wrapper">
       <AgGridReact

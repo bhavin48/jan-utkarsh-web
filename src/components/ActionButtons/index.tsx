@@ -27,7 +27,6 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
   viewSkillAssessment,
 }) => {
   const userDetail = useAppSelector(state => state.auth.userDetail);
-
   return (
     <div className="action-column">
       {lock?.action && (
@@ -36,6 +35,7 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
           permission={checkPrivileges(userDetail, lock.permissionKey)}
           {...lock}
         />
+        
       )}
       {viewInterestAssessment?.action && (
         <ViewButton

@@ -14,6 +14,7 @@ const SelectInputBox: React.FC<SelectInputBoxProps> = props => {
   const { options, disableOptions, ...rest } = inputProps;
 
   const valueKey = options?.valueKey || defaultOptionKeys.value;
+ 
   const textKey = options?.textKey || defaultOptionKeys.text;
   const alternativeTextKey =
     options?.alternativeTextKey || defaultOptionKeys.text;

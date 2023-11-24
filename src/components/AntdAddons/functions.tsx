@@ -58,8 +58,9 @@ export const defaultOptionKeys = {
 export const defaultSeparator = "";
 
 export const SplitInputWrapperProps = (props: any) => {
+
   const modifiedProps: any = { formProps: {}, inputProps: {} };
-  Object.keys(props).forEach(key => {
+  Object.keys(props).forEach(key => { 
     if (InputWrapperTypes.includes(key)) {
       modifiedProps.formProps[key] = props[key];
     } else {

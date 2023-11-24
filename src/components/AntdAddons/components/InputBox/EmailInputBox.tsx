@@ -5,6 +5,8 @@ import { InputBoxProps } from "./interface";
 
 const EmailInputBox: React.FC<InputBoxProps> = (props) => {
 	const { formProps, inputProps } = SplitInputWrapperProps(props);
+	console.log("inputProps " , inputProps);
+	
 	return (
 		<InputWrapper {...formProps}>
 			<Input type="email" {...inputProps} />

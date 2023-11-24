@@ -10,12 +10,13 @@ const ViewButton: React.FC<Partial<ButtonProps>> = ({
   iconProps,
   ...rest
 }) => {
-  if (!permission) {
+  
+  if (permission) {
     return null;
   }
 
   delete rest?.permissionKey;
-
+  
   return (
     <Button
       type="text"

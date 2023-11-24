@@ -15,6 +15,9 @@ const CheckboxInputBox: React.FC<CheckboxInputBoxProps> = props => {
   const valueKey = options?.valueKey || defaultOptionKeys.value;
   const textKey = options?.textKey || defaultOptionKeys.text;
   const separator = options?.separator || defaultSeparator;
+
+  console.log("options " , options);
+  
   let textKeys: any[] = [];
   if (Array.isArray(options?.textKey)) {
     textKeys = options?.textKey;

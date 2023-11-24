@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
 import { Button, ModalProps } from "antd";
 import CommonModal from "./CommonModal";
-import { useAppDispatch } from "../../store/app";
+import { useAppDispatch, useAppSelector } from "../../store/app";
 
 interface ChangeStatusModalProps extends ModalProps {
   titleName: string;
@@ -16,10 +16,13 @@ const ChangeStatusModal: React.FC<ChangeStatusModalProps> = ({
   data,
   callApi,
   ...rest
+  
 }) => {
   const dispatch = useAppDispatch();
   const [saving, setSaving] = useState<boolean>(false);
 
+  console.log("data " , data);
+  
   const onYesClick = useCallback(() => {
     setSaving(true);
     dispatch(callApi(data?.id, data?.status))
@@ -29,6 +32,9 @@ const ChangeStatusModal: React.FC<ChangeStatusModalProps> = ({
       .finally(() => setSaving(false))
       .catch((e: any) => e);
   }, [data]);
+
+  // console.log("userDetails " , data?.name);
+
 
   return data ? (
     <CommonModal
@@ -53,7 +59,7 @@ const ChangeStatusModal: React.FC<ChangeStatusModalProps> = ({
       {...rest}
     >
       <div className="deleteNote">
-        Are you sure want to {data?.status ? "Activate" : "Deactivate"}?
+        Are you sure want to {data?.status ? "Activate" : "Deactivate"} {data.data.name} {data.data.pincode.pincode}?
       </div>
     </CommonModal>
   ) : (

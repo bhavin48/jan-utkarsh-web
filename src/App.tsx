@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter} from "react-router-dom";
 import Router from "./config/RouterConfig";
 import { initialAppOptions } from "./store/AuthSlice";
 import PageSpinner from "./components/PageSpinner/PageSpinner";
@@ -16,7 +16,10 @@ const App: React.FC = () => {
   }, [dispatch]);
 
   return (
-    <BrowserRouter>{appLoading ? <PageSpinner /> : <Router />}</BrowserRouter>
+
+    <BrowserRouter>
+      {appLoading ? <PageSpinner /> : <Router />}
+    </BrowserRouter>
   );
 }
 

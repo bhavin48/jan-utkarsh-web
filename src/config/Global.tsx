@@ -13,7 +13,10 @@ export const Constant = {
 
 export const handleStorageEvents = (e: any) => {
   if (e.key === 'token') {
+    console.log("e.key " , e.key);
+    
     if (e.oldValue && !e.newValue) {
+      console.log("e.key " , e.key);
       window.location.href = "/";
       store.dispatch(resetAuthStore());
     } else if (!e.oldValue && e.newValue) {

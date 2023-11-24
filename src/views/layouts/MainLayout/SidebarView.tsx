@@ -16,11 +16,11 @@ interface AppSidebarViewProps {
 
 const SidebarView: React.FC<AppSidebarViewProps> = ({ collapsed }) => {
   const userDetail = useAppSelector(state => state.auth.userDetail);
+
   const location = useLocation();
   const navigate = useNavigate();
   const [menu, setMenu] = useState<any>([]);
   const [openMenu, setOpenMenu] = useState<any>([]);
-
   const defaultMenuIcon = <AppstoreOutlined />;
 
   const svgIcons: any = {
@@ -34,18 +34,23 @@ const SidebarView: React.FC<AppSidebarViewProps> = ({ collapsed }) => {
     open: any = [],
     parentKey: any = null
   ): any => {
+   
+   
     return menu_item
       ? Object.keys(menu_item).map(key => {
-          const item: any = menu_item[key];
-          if (item.children) {
+          const item: any = menu_item[key];    
+               
+          if (item.children) {      
+        
             return {
               key: item.id + "",
               url: item.path,
               label: item.label,
-              icon:
-                svgIcons[camelCaseString(item.label).replaceAll(" ", "")] ??
+              icon:        // replaceAll -> remove space
+                svgIcons[camelCaseString(item.label).replaceAll(" ", "")] ?? 
                 defaultMenuIcon,
               children: AppMenu(item.children, open, item.id + ""),
+              
             };
           } else {
             if (

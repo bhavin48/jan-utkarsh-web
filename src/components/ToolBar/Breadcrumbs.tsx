@@ -6,6 +6,7 @@ interface BreadcrumbsProps {
   breadcrumbs: BreadcrumbConfigProps;
 }
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ breadcrumbs }) => {
+
   const breadcrumbItems = breadcrumbs.path?.map(
     (item: BreadcrumbComponentItemTypes) => {
       return {

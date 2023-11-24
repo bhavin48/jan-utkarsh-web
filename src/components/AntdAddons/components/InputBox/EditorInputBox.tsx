@@ -9,6 +9,7 @@ const EditorInputBox: React.FC<EditorBoxProps> = (props) => {
   const [initialValue, setInitialValue] = useState("");
 
   const handleEditorChange = (e: any) => {
+
     if (editorChange) {
       editorChange(e);
       setInitialValue(e)

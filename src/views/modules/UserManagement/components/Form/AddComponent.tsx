@@ -36,7 +36,6 @@ const AddComponent: React.FC<AddDrawerProps> = ({
 
   const handleFormSubmit = (data: any) => {
     setSaving(true);
-
     dispatch(createRecord(data))
       .then(() => {
         drawerClose();
@@ -46,7 +45,8 @@ const AddComponent: React.FC<AddDrawerProps> = ({
       })
       .finally(() => setSaving(false));
   };
-
+  console.log(disabled);
+  
   return (
     <Drawer
       title={`Add ${titleName}`}
@@ -66,16 +66,13 @@ const AddComponent: React.FC<AddDrawerProps> = ({
         </Button>,
         <Button
           key="1"
-          disabled={disabled}
+          htmlType='submit'
+          type='primary'
           form="addForm"
           loading={saving}
-          htmlType="submit"
-          type="primary"
-        >
-          Save
-        </Button>,
+        >save</Button>
       ]}
-      {...rest}
+      {...rest}    // open drawer
     >
       <FormComponent
         form={form}

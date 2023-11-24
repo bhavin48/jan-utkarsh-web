@@ -4,12 +4,15 @@ import commonReducer from "./CommonSlice";
 import userReducer from "../views/modules/UserManagement/utils/slice";
 import roleReducer from "../views/modules/RoleManagement/utils/slice";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-
+import buserReducer from "../bhavin/UserManagement/conponents/utils/sliceB";
+import talukaReducer from "../taluka/component/utils/talukaSlice";
 const reducer = {
   common: commonReducer,
   auth: authReducer,
   user: userReducer,
   role: roleReducer,
+  bhavin : buserReducer,
+  taluka : talukaReducer
 };
 
 const store = configureStore({

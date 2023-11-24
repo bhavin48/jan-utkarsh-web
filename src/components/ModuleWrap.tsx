@@ -8,6 +8,7 @@ interface ModuleWrapProps {
 }
 
 const ModuleWrap: React.FC<ModuleWrapProps> = ({ module: Module, ...rest }) => {
+
   // const { AUTH } = useStore();
   // AUTH.getPermission(rest?.permissionPath ? "/" + rest.permissionPath : "");
   // if (!AUTH.checkPermission(permission)) {
@@ -24,6 +25,7 @@ const ModuleWrap: React.FC<ModuleWrapProps> = ({ module: Module, ...rest }) => {
       <ErrorBoundary description={"Report the Error You Faced"}>
         <div className="mainPageWrap">
           <Module permissions={""} {...rest} />
+         
         </div>
       </ErrorBoundary>
     </Suspense>

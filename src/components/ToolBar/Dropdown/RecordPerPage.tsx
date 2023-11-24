@@ -9,6 +9,7 @@ interface RecordPerPageProps {
 }
 
 const RecordPerPage: React.FC<RecordPerPageProps> = ({onChange, perPage, ...rest}) => {
+  
   return (
     <Select
       defaultValue={perPage + " per page"}

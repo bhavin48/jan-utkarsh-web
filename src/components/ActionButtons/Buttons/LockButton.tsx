@@ -10,11 +10,13 @@ const LockButton: React.FC<Partial<ButtonProps>> = ({
   iconProps,
   ...rest
 }) => {
+
   if (!permission) {
     return null;
   }
 
-  delete rest?.permissionKey;
+
+  // delete rest?.permissionKey;
 
   return (
     <Button

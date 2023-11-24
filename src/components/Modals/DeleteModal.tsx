@@ -20,17 +20,14 @@ const DeleteModal: React.FC<DeleteModalProps> = ({
 }) => {
   const dispatch = useAppDispatch();
   const [saving, setSaving] = useState<boolean>(false);
-
   const deleteApi = () => {
     setSaving(true);
     callApi(deleteValues.id);
     dispatch(callApi(deleteValues.id))
       .then(() => {
-        // if (!data.status) {
-        //   form.setFields(data.error);
-        // } else {
+    
         close();
-        // }
+  
       })
       .finally(() => setSaving(false));
   };
@@ -57,7 +54,7 @@ const DeleteModal: React.FC<DeleteModalProps> = ({
       ]}
     >
       <div className="deleteNote">
-        Are you sure want to delete {name && <span>{name}</span>} {title}?
+        Are you sure want to delete {name && <span>{name}</span>} {deleteValues?.name}?
       </div>
     </CommonModal>
   ) : (
